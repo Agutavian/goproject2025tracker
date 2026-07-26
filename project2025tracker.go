@@ -23,12 +23,12 @@ func GetPercentageCompleted(userAgent string) float64 {
 		colly.UserAgent(userAgent),
 	)
 	collyInstance.OnError(func(_ *colly.Response, err error) {
-		fmt.Println("error: ", err)
+		fmt.Println("Project2025Tracker | Error: ", err)
 	})
 
 	collyInstance.OnResponse(func(r *colly.Response) {
-		fmt.Println("Status Code: ", r.StatusCode)
-		fmt.Println("response: ", r.Request.URL)
+		//fmt.Println("Status Code: ", r.StatusCode)
+		//fmt.Println("response: ", r.Request.URL)
 	})
 
 	counter := 0
@@ -38,26 +38,26 @@ func GetPercentageCompleted(userAgent string) float64 {
 		//TODO ADD VERY IMPORTANT ERROR HANDLING
 		numer, err := strconv.ParseInt(e.Text, 0, 16)
 		if err != nil {
-			fmt.Println("an error occurred when turning ", e.Text, "\n error: ", err)
+			fmt.Println("Project2025Tracker | an error occurred when turning ", e.Text, "\n error: ", err)
 		} else {
 			projectDataList[counter] = numer
-			fmt.Println("new numer;", numer)
+			//fmt.Println("new numer;", numer)
 			counter++
 		}
-		fmt.Println("HTML Text:", e.Text)
+		//fmt.Println("HTML Text:", e.Text)
 	})
 
 	collyInstance.OnScraped(func(r *colly.Response) {
-		fmt.Println("Finished On Scrape:", r.Request.URL)
+		//fmt.Println("Finished On Scrape:", r.Request.URL)
 	})
 
 	err := collyInstance.Visit("https://www.project2025.observer/en")
 	if err != nil {
-		fmt.Println(err.Error())
+		fmt.Println("Project2025Tracker | Error:", err.Error())
 	}
-	fmt.Println(projectDataList)
+	//fmt.Println(projectDataList)
 	percentageCompleted := func() float64 {
-		fmt.Println("Percentage Completed:", float64(projectDataList[0]-projectDataList[1])/float64(projectDataList[0]))
+		//fmt.Println("Percentage Completed:", float64(projectDataList[0]-projectDataList[1])/float64(projectDataList[0]))
 		return 0.0
 	}()
 	return percentageCompleted
