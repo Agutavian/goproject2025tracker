@@ -7,13 +7,13 @@ import (
 	"github.com/gocolly/colly"
 )
 
-type ProjectTwentyFive struct {
-	PercentageCompleted string
-}
-
-func main() {
-	fmt.Println("Project Twenty Five Progress:", GetPercentageCompleted("Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0"))
-}
+//type ProjectTwentyFive struct {
+//	PercentageCompleted string
+//}
+//
+////func main() {
+////	fmt.Println("Project Twenty Five Progress:", GetPercentageCompleted("Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0"))
+////}
 
 // GetPercentageCompleted Returns the percentage of project 2025 is completed.
 // If -1 is returned, error
