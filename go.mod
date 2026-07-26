@@ -1,4 +1,4 @@
-module GOProject2025Tracker
+module github.com/Agutavian/goproject2025tracker
 
 go 1.26.4
 
