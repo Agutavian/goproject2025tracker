@@ -41,7 +41,7 @@ func GetPercentageCompleted(userAgent string, printNetworkStatusCodes bool) (flo
 
 	// Counter counts the current position of the list of HTML
 	counter := 0
-	projectDataList := [2]int64{}
+	projectDataList := [3]int64{}
 	var parseintError error
 	collyInstance.OnHTML(".font-semibold.text-lg.text-foreground", func(e *colly.HTMLElement) {
 		numer, err := strconv.ParseInt(e.Text, 0, 16)
