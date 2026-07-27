@@ -1,5 +1,5 @@
 module github.com/Agutavian/goproject2025tracker
-
+// CURRENT VERSION: V1.0.1
 go 1.26.4
 
 require github.com/gocolly/colly v1.2.0
